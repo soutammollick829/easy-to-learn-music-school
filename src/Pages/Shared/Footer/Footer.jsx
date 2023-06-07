@@ -11,8 +11,8 @@ import {
 
 const Footer = () => {
   return (
-    <div className="relative mt-20">
-      <div className="bg-[#efcf4f] text-white lg:flex items-center justify-around h-32 w-[330px] lg:w-[800px] mx-10 absolute lg:left-20 -top-24 rounded-lg">
+    <div className="relative mt-96">
+      <div className="bg-[#efcf4f] text-white lg:flex items-center justify-around h-32 w-[330px] lg:w-[800px] mx-10 absolute lg:left-16 -top-24 rounded-lg">
         <h1 className="p-5">
           <span className="text-xl font-semibold ">Want to know last news?</span>{" "}
           <br />

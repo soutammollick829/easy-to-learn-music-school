@@ -1,8 +1,9 @@
+import BannarCarusel from "../BannarCarusel/BannarCarusel";
 
 const Home = () => {
     return (
         <div>
-            <h3>This is Home page</h3>
+            <BannarCarusel/>
         </div>
     );
 };
