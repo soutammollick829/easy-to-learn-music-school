@@ -12,9 +12,9 @@ import {
 const Footer = () => {
   return (
     <div className="relative mt-20">
-      <div className="bg-[#efcf4f] text-white flex items-center justify-around h-32 w-[800px] mx-10 absolute left-20 -top-24 rounded-lg">
-        <h1>
-          <span className="text-xl font-semibold">Want to know last news?</span>{" "}
+      <div className="bg-[#efcf4f] text-white lg:flex items-center justify-around h-32 w-[330px] lg:w-[800px] mx-10 absolute lg:left-20 -top-24 rounded-lg">
+        <h1 className="p-5">
+          <span className="text-xl font-semibold ">Want to know last news?</span>{" "}
           <br />
           <span className="text-4xl font-bold text-slate-600">Subscribe</span>
         </h1>
@@ -29,7 +29,7 @@ const Footer = () => {
           </label>
         </div>
       </div>
-      <footer className="footer p-10 bg-[#0c4b65] text-white flex justify-between items-center">
+      <footer className="footer p-10 bg-[#0c4b65] text-white lg:flex justify-between items-center w-full">
         <div className=" pt-10">
           <img className="w-28 bg-slate-400" src={logo} alt="" />
           <p>
