@@ -1,0 +1,62 @@
+[
+  {
+    
+    "name": "Beginner's Piano",
+    "image": "https://i.ibb.co/c3gsN81/top-view-piano-keyboard-with-lighting-shadow-79658-22.jpg",
+    "category": "Beginner",
+    "instrument": "Piano",
+    "details": "This course is designed for beginners who want to learn how to play the piano. No prior experience is required.",
+    "duration": "3 months",
+    "cost": "$350"
+  },
+  {
+    
+    "name": "Intermediate Guitar",
+    "image": "https://i.ibb.co/CnYK1FJ/blog2.jpg",
+    "category": "Intermediate",
+    "instrument": "Guitar",
+    "details": "This course is designed for intermediate guitar players who want to enhance their skills and learn advanced techniques.",
+    "duration": "4 months",
+    "cost": "$400"
+  },
+  {
+    
+    "name": "Advanced Violin",
+    "image": "https://i.ibb.co/vXx3H4g/Class-3-768x512.jpg",
+    "category": "Advanced",
+    "instrument": "Violin",
+    "details": "This course is designed for advanced violinists who want to refine their skills and explore complex musical pieces.",
+    "duration": "6 months",
+    "cost": "$600"
+  },
+  {
+    
+    "name": "Beginner's drum",
+    "image": "https://i.ibb.co/wNbcYhx/1000-F-88976790-L8vt-PHmio-VZc-NNf-Ypa-Cc-Str-OVMZY5-Sp-G.jpg",
+    "category": "Beginner",
+    "instrument": "Piano",
+    "details": "This course is designed for beginners who want to learn how to play the piano. No prior experience is required.",
+    "duration": "3 months",
+    "cost": "$300"
+  },
+  {
+    
+    "name": "Intermediate winds",
+    "image": "https://i.ibb.co/HhmWksd/large-c505fb8e-5f02-48a3-a695-21e18f4e362e.jpg",
+    "category": "Intermediate",
+    "instrument": "Winds",
+    "details": "This course is designed for intermediate guitar players who want to enhance their skills and learn advanced techniques.",
+    "duration": "4 months",
+    "cost": "$400"
+  },
+  {
+    
+    "name": "Advanced guitar",
+    "image": "https://i.ibb.co/PWfym6F/Photo-Programintrotoguitar-770x414.webp",
+    "category": "Advanced",
+    "instrument": "Guitar",
+    "details": "This course is designed for advanced violinists who want to refine their skills and explore complex musical pieces.",
+    "duration": "6 months",
+    "cost": "$600"
+  }
+]

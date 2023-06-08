@@ -21,7 +21,8 @@ const Footer = () => {
         <div className="form-control">
           <label className="input-group">
             <input
-              type="text"
+              type="email"
+              required
               placeholder="Your email address"
               className="input input-bordered"
             />
