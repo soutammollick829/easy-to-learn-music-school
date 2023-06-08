@@ -1,4 +1,4 @@
-import { FaFacebook, FaFacebookF, FaGooglePlus, FaGooglePlusG, FaInstagram, FaTwitter } from "react-icons/fa";
+import {FaFacebookF, FaGooglePlusG, FaInstagram, FaTwitter } from "react-icons/fa";
 
 
 const InstructorsCard = ({instructor}) => {

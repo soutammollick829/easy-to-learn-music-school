@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/Authprovider";
 
 const Login = () => {
   const {
@@ -9,7 +11,16 @@ const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const {singIn} = useContext(AuthContext);
+
+  const onSubmit = (data) => {
+    console.log(data);
+    singIn(data.email, data.password)
+    .then(result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    })
+  };
 
   return (
     <div>

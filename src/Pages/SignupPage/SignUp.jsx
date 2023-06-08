@@ -2,25 +2,31 @@ import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import loginImg from "../../assets/imags/Login/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-w.jpg"
+import { useContext } from "react";
+import { AuthContext } from "../../providers/Authprovider";
 
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+    const {createUser} = useContext(AuthContext)
+  const onSubmit = data => {
+    console.log(data);
+    createUser(data.email, data.password)
+    .then(result => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+    })
+  };
 
   return (
     <div>
       <Helmet>
         <title>Easy to learn music school | Sign-up page</title>
       </Helmet>
-      <div className="hero min-h-screen bg-base-200 px-10">
+      <div className="hero min-h-screen px-10">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign up</h1>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+            <img className="h-[740px] w-full" src={loginImg} alt="" />
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
@@ -35,6 +41,7 @@ const SignUp = () => {
                   placeholder="First name"
                   className="input input-bordered"
                 />
+                {errors.firstName && <span className="text-red-600 mt-2">First name is required.</span>}
               </div>
               <div className="form-control w-1/2">
                 <label className="label">
@@ -42,7 +49,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
-                  {...register("lastName", { required: true })}
+                  {...register("lastName")}
                   placeholder="Last name"
                   className="input input-bordered"
                 />
@@ -54,7 +61,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="photo"
-                  {...register("photo", { required: true })}
+                  {...register("photo")}
                   placeholder="photo url"
                   className="input input-bordered"
                 />
@@ -66,10 +73,10 @@ const SignUp = () => {
                 <input
                   type="email"
                   {...register("email", { required: true })}
-                  required
                   placeholder="email"
                   className="input input-bordered"
                 />
+                {errors.email && <span className="text-red-600 mt-2">Email is required. please fill out this field</span>}
               </div>
               <div className="form-control relative">
                 <label className="label">
@@ -77,10 +84,15 @@ const SignUp = () => {
                 </label>
                 <input
                   type="password"
-                  {...register("password", { required: true, maxLength: 20 })}
+                  {...register("password", { required: true, minLength: 6, maxLength: 20,
+                    pattern: /(?=.*[a-z])(?!.*[A-Z])(?!.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*\d).{6,}/
+                 })}
                   placeholder="password"
                   className="input input-bordered"
                 />
+                {errors.password?.type === 'required' && <span className="text-red-600 mt-2">Password is required.</span>}
+                {errors.password?.type === 'minLength' && <p role="alert" className="text-red-600 mt-2">Password must me 6 characters</p>}
+                {errors.password?.type === 'pattern' && <p role="alert" className="text-red-600 mt-2">Don't have a capital latter, don't have a special characters, At last 1 small latter</p>}
                 <i className="absolute top-14 left-72">
                   <FaEyeSlash />
                 </i>
@@ -91,15 +103,16 @@ const SignUp = () => {
                 </label>
                 <input
                   type="password"
-                  {...register("password", { required: true, maxLength: 20 })}
-                  placeholder="password"
+                  {...register("Confirm", { required: true, maxLength: 20 })}
+                  placeholder="Confirm password"
                   className="input input-bordered"
                 />
+                {errors.Confirm && <span className="text-red-600 mt-2">Check your confirm password</span>}
                 <i className="absolute top-14 left-72">
                   <FaEyeSlash />
                 </i>
               </div>
-              <input type="file" className="file-input file-input-bordered file-input-sm w-full max-w-xs" />
+              <input type="file" {...register("file")} className="file-input file-input-bordered file-input-sm w-full max-w-xs" />
               <h3>
                 Already have an account?
                 <Link to="/login">

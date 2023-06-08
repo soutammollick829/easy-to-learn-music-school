@@ -1,7 +1,16 @@
 import { Link } from "react-router-dom";
 import logo from "../../../assets/imags/website logo/beyoglu-sanat-animated.gif";
+import { useContext } from "react";
+import { AuthContext } from "../../../providers/Authprovider";
 
 const Navbar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handelLogOut = () =>{
+    logOut()
+    .then(()=>{})
+    .catch(error => console.log(error))
+  }
   const navOptions = (
     <>
       <li className="font-bold text-base hover:text-[#c25934]">
@@ -63,7 +72,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login'><a className="btn bg-[#c25934] text-white hover:bg-[#0c4b65]">Login</a></Link>
+        {
+          user ? <>
+          <button onClick={handelLogOut} className="btn bg-[#c25934] text-white hover:bg-[#0c4b65]"><Link to='/login'>Log-out</Link></button>
+          </> : <>
+          <button className="btn bg-[#c25934] text-white hover:bg-[#0c4b65]"><Link to='/login'>Login</Link></button>
+          </>
+        }
+        
       </div>
     </div>
   );
