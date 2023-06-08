@@ -5,16 +5,16 @@ const Navbar = () => {
   const navOptions = (
     <>
       <li className="font-bold text-base hover:text-[#c25934]">
-        <Link to='/'><a>Home</a></Link>
+        <Link to='/'>Home</Link>
       </li>
       <li className="font-bold text-base hover:text-[#c25934]">
-        <Link to='/instructors'><a>Instructors</a></Link>
+        <Link to='/instructors'>Instructors</Link>
       </li>
       <li className="font-bold text-base hover:text-[#c25934]">
-        <Link to='/classes'><a>Classes</a></Link>
+        <Link to='/classes'>Classes</Link>
       </li>
       <li className="font-bold text-base hover:text-[#c25934]">
-        <Link to='/'><a>Dashboard</a></Link>
+        <Link to='/'>Dashboard</Link>
       </li>
     </>
   );
@@ -63,7 +63,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login'><a className="btn bg-[#c25934] text-white hover:text-black">Login</a></Link>
+        <Link to='/login'><a className="btn bg-[#c25934] text-white hover:bg-[#0c4b65]">Login</a></Link>
       </div>
     </div>
   );
