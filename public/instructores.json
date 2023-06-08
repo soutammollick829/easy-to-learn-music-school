@@ -1,0 +1,72 @@
+[
+  {
+    "name": "John Smith",
+    "category": "Guitar Instructor",
+    "image": "https://i.ibb.co/qxbTGV7/blog10.jpg",
+    "email": "john.smith@example.com",
+    "available_seats": 25,
+    "rating":"4.9",
+    "review": "John is an excellent guitar instructor. He has great patience and makes learning fun.",
+    "course_time": "Monday, Wednesday, Friday - 5:00 PM to 7:00 PM"
+  },
+  {
+    "name": "Emily Johnson",
+    "category": "Piano Instructor",
+    "image": "https://i.ibb.co/ZYb5dfX/music-teacher.jpg",
+    "email": "emily.johnson@example.com",
+    "available_seats": 32,
+    "rating":"4.7",
+    "review": "Emily is a talented piano instructor. She is patient and provides detailed feedback to improve technique.",
+    "course_time": "Tuesday, Thursday - 4:00 PM to 6:00 PM"
+  },
+  {
+    "name": "Michael Davis",
+    "category": "Drum Instructor",
+    "image": "https://i.ibb.co/wwkpHZ5/tet-ti0303889.jpg",
+    "email": "michael.davis@example.com",
+    "available_seats": 23,
+    "rating":"4.8",
+    "review": "Michael is an energetic drum instructor. He has a great sense of rhythm and helps students develop their own style.",
+    "course_time": "Monday, Wednesday, Friday - 6:00 PM to 8:00 PM"
+  },
+  {
+    "name": "Sarah Thompson",
+    "category": "Vocal Instructor",
+    "image": "https://i.ibb.co/GVJd9pq/1000-F-81385839-5-X1-Uh-Ab-N3u20-JRf1qfehz-OLtz38-Bl8-Kg.jpg",
+    "email": "sarah.thompson@example.com",
+    "available_seats": 24,
+    "rating":"4.6",
+    "review": "Sarah is a skilled vocal instructor. She teaches proper breathing techniques and helps students explore different genres.",
+    "course_time": "Tuesday, Thursday - 6:00 PM to 8:00 PM"
+  },
+  {
+    "name": "Marry Wilson",
+    "category": "Violin Instructor",
+    "image": "https://i.ibb.co/Kh2DjnB/c870x524.webp",
+    "email": "david.wilson@example.com",
+    "available_seats": 11,
+    "rating":"5",
+    "review": "David is a passionate violin instructor. He focuses on developing a solid foundation in technique and musicality.",
+    "course_time": "Monday, Wednesday, Friday - 3:00 PM to 5:00 PM"
+  },
+  {
+    "name": "Robert Garcia",
+    "category": "Bass Guitar Instructor",
+    "image": "https://i.ibb.co/jf4frMW/images-1.jpg",
+    "email": "robert.garcia@example.com",
+    "available_seats": 22,
+    "rating":"4.7",
+    "review": "Robert is an experienced bass guitar instructor. He teaches different playing styles and improvisation techniques.",
+    "course_time": "Monday, Wednesday, Friday - 7:00 PM to 9:00 PM"
+  },
+  {
+    "name": "Jessica Lee",
+    "category": "winds Instructor",
+    "image": "https://i.ibb.co/ZfGsbhR/27984714-music-teacher.webp",
+    "email": "jessica.lee@example.com",
+    "available_seats": 19,
+    "rating":"4.8",
+    "review": "Jessica is a talented flute instructor. She helps students master difficult techniques and performs with grace.",
+    "course_time": "Tuesday, Thursday - 2:00 PM to 4:00 PM"
+  }
+]

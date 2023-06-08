@@ -13,7 +13,7 @@ const PopulerClassCard = ({ popular }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title font-bold text-[#c25934]">{name}</h2>
-          <p className="text-[#0c4b65]">{details.slice(0, 70)}...</p>
+          <p className="text-[#0c4b65]">{details?.slice(0, 70)}...</p>
           <div className="flex justify-center items-center gap-5 mt-3">
             <span className="flex items-center gap-2 font-bold text-[#0c4b65]">
               <FaCalendarAlt className="text-[#c25934]" />

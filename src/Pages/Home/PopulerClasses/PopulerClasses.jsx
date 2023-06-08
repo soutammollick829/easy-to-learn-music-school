@@ -3,7 +3,7 @@ import PopulerClassCard from "../../../components/PopulerClassCard/PopulerClassC
 
 const PopulerClasses = () => {
   const [classes] = useClassesData();
-  console.log(classes);
+
   return (
     <>
       <div className="text-center mt-20">
