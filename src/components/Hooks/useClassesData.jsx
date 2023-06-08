@@ -4,7 +4,7 @@ const useClassesData = () =>{
     const [classes, setClasses] = useState(null);
     const [loading, setLoading] = useState(true);
     useEffect(()=>{
-        fetch(`populerclass.json`)
+        fetch(`http://localhost:5000/populer-class`)
         .then(res => res.json())
         .then(data => {
             setClasses(data);
