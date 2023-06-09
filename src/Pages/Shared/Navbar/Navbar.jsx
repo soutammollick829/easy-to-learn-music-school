@@ -22,13 +22,13 @@ const Navbar = () => {
       <li className="font-bold text-base hover:text-[#c25934]">
         <Link to='/classes'>Classes</Link>
       </li>
-      <li className="font-bold text-base hover:text-[#c25934]">
-        <Link to='/'>Dashboard</Link>
-      </li>
+      { user && <li className="font-bold text-base hover:text-[#c25934]">
+        <Link to='/dashboard'>Dashboard</Link>
+      </li>}
     </>
   );
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -55,7 +55,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <img className="w-24 lg:w-28 bg-slate-400" src={logo} alt="" />
+          <img className="w-24 lg:w-28" src={logo} alt="" />
           <p>
             <span className=" text-2xl lg:text-3xl font-extrabold text-[#efcf4f]">
               Easy to
@@ -72,6 +72,11 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
+        {
+          user && <div className="w-10 mr-5 border-2 rounded-full border-[#efcf4f] hover:border-4">
+          <img className="rounded-full" src={user?.photoURL} />
+        </div>
+        }
         {
           user ? <>
           <button onClick={handelLogOut} className="btn bg-[#c25934] text-white hover:bg-[#0c4b65]"><Link to='/login'>Log-out</Link></button>

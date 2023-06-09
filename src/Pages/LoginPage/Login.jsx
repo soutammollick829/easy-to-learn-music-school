@@ -2,8 +2,9 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/Authprovider";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const {
@@ -12,6 +13,10 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const {singIn} = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const from = location.state?.from?.pathname || '/';
 
   const onSubmit = (data) => {
     console.log(data);
@@ -19,6 +24,12 @@ const Login = () => {
     .then(result => {
       const loggedUser = result.user;
       console.log(loggedUser);
+      Swal.fire(
+        'Login successful!',
+        'Welcome easy to learn music school',
+        'success'
+      )
+      navigate(from, {replace: true});
     })
   };
 

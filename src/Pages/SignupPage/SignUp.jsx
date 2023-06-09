@@ -1,21 +1,44 @@
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import loginImg from "../../assets/imags/Login/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-w.jpg"
+import { Link, useNavigate } from "react-router-dom";
+import loginImg from "../../assets/imags/Login/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-w.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const {createUser} = useContext(AuthContext)
-  const onSubmit = data => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const { createUser, updateUserProfile } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+
+  const onSubmit = (data) => {
     console.log(data);
-    createUser(data.email, data.password)
-    .then(result => {
+    createUser(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
-    })
+      updateUserProfile(data.firstName, data.photo)
+        .then(() => {
+          console.log("user profile update");
+          reset();
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Sign up successful",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          navigate('/');
+        })
+        .catch((error) => console.log(error));
+      
+    });
   };
 
   return (
@@ -30,31 +53,35 @@ const SignUp = () => {
           </div>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                <div className="flex gap-2">
+              <div className="flex gap-2">
                 <div className="form-control w-1/2">
-                <label className="label">
-                  <span className="label-text">First name</span>
-                </label>
-                <input
-                  type="text"
-                  {...register("firstName", { required: true })}
-                  placeholder="First name"
-                  className="input input-bordered"
-                />
-                {errors.firstName && <span className="text-red-600 mt-2">First name is required.</span>}
-              </div>
-              <div className="form-control w-1/2">
-                <label className="label">
-                  <span className="label-text">Last name</span>
-                </label>
-                <input
-                  type="text"
-                  {...register("lastName")}
-                  placeholder="Last name"
-                  className="input input-bordered"
-                />
-              </div>
+                  <label className="label">
+                    <span className="label-text">First name</span>
+                  </label>
+                  <input
+                    type="text"
+                    {...register("firstName", { required: true })}
+                    placeholder="First name"
+                    className="input input-bordered"
+                  />
+                  {errors.firstName && (
+                    <span className="text-red-600 mt-2">
+                      First name is required.
+                    </span>
+                  )}
                 </div>
+                <div className="form-control w-1/2">
+                  <label className="label">
+                    <span className="label-text">Last name</span>
+                  </label>
+                  <input
+                    type="text"
+                    {...register("lastName")}
+                    placeholder="Last name"
+                    className="input input-bordered"
+                  />
+                </div>
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Photo url</span>
@@ -76,7 +103,11 @@ const SignUp = () => {
                   placeholder="email"
                   className="input input-bordered"
                 />
-                {errors.email && <span className="text-red-600 mt-2">Email is required. please fill out this field</span>}
+                {errors.email && (
+                  <span className="text-red-600 mt-2">
+                    Email is required. please fill out this field
+                  </span>
+                )}
               </div>
               <div className="form-control relative">
                 <label className="label">
@@ -84,15 +115,32 @@ const SignUp = () => {
                 </label>
                 <input
                   type="password"
-                  {...register("password", { required: true, minLength: 6, maxLength: 20,
-                    pattern: /(?=.*[a-z])(?!.*[A-Z])(?!.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*\d).{6,}/
-                 })}
+                  {...register("password", {
+                    required: true,
+                    minLength: 6,
+                    maxLength: 20,
+                    pattern:
+                      /(?=.*[a-z])(?!.*[A-Z])(?!.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])(?=.*\d).{6,}/,
+                  })}
                   placeholder="password"
                   className="input input-bordered"
                 />
-                {errors.password?.type === 'required' && <span className="text-red-600 mt-2">Password is required.</span>}
-                {errors.password?.type === 'minLength' && <p role="alert" className="text-red-600 mt-2">Password must me 6 characters</p>}
-                {errors.password?.type === 'pattern' && <p role="alert" className="text-red-600 mt-2">Don't have a capital latter, don't have a special characters, At last 1 small latter</p>}
+                {errors.password?.type === "required" && (
+                  <span className="text-red-600 mt-2">
+                    Password is required.
+                  </span>
+                )}
+                {errors.password?.type === "minLength" && (
+                  <p role="alert" className="text-red-600 mt-2">
+                    Password must me 6 characters
+                  </p>
+                )}
+                {errors.password?.type === "pattern" && (
+                  <p role="alert" className="text-red-600 mt-2">
+                    Do not have a capital latter, do not have a special
+                    characters, At last 1 small latter
+                  </p>
+                )}
                 <i className="absolute top-14 left-72">
                   <FaEyeSlash />
                 </i>
@@ -107,12 +155,20 @@ const SignUp = () => {
                   placeholder="Confirm password"
                   className="input input-bordered"
                 />
-                {errors.Confirm && <span className="text-red-600 mt-2">Check your confirm password</span>}
+                {errors.Confirm && (
+                  <span className="text-red-600 mt-2">
+                    Check your confirm password
+                  </span>
+                )}
                 <i className="absolute top-14 left-72">
                   <FaEyeSlash />
                 </i>
               </div>
-              <input type="file" {...register("file")} className="file-input file-input-bordered file-input-sm w-full max-w-xs" />
+              <input
+                type="file"
+                {...register("file")}
+                className="file-input file-input-bordered file-input-sm w-full max-w-xs"
+              />
               <h3>
                 Already have an account?
                 <Link to="/login">
@@ -127,7 +183,7 @@ const SignUp = () => {
             </form>
             <div className="divider">Login with google</div>
             <div className="mx-auto mb-5">
-                <FaGoogle className="text-3xl border-2 border-[#efcf4f] rounded-full hover:border-4"/>
+              <FaGoogle className="text-3xl border-2 border-[#efcf4f] rounded-full hover:border-4" />
             </div>
           </div>
         </div>

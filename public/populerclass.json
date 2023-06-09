@@ -2,9 +2,11 @@
   {
     
     "name": "Beginner's Piano",
+    "instructorName": "Emily Johnson",
     "image": "https://i.ibb.co/c3gsN81/top-view-piano-keyboard-with-lighting-shadow-79658-22.jpg",
     "category": "Beginner",
     "instrument": "Piano",
+    "available_seats": 32,
     "details": "This course is designed for beginners who want to learn how to play the piano. No prior experience is required.",
     "duration": "3 months",
     "cost": "$350"
@@ -12,9 +14,11 @@
   {
     
     "name": "Intermediate Guitar",
+    "instructorName": "John Smith",
     "image": "https://i.ibb.co/CnYK1FJ/blog2.jpg",
     "category": "Intermediate",
     "instrument": "Guitar",
+    "available_seats": 25,
     "details": "This course is designed for intermediate guitar players who want to enhance their skills and learn advanced techniques.",
     "duration": "4 months",
     "cost": "$400"
@@ -22,9 +26,11 @@
   {
     
     "name": "Advanced Violin",
+    "instructorName": "Marry Wilson",
     "image": "https://i.ibb.co/vXx3H4g/Class-3-768x512.jpg",
     "category": "Advanced",
     "instrument": "Violin",
+    "available_seats": 11,
     "details": "This course is designed for advanced violinists who want to refine their skills and explore complex musical pieces.",
     "duration": "6 months",
     "cost": "$600"
@@ -32,9 +38,11 @@
   {
     
     "name": "Beginner's drum",
+    "instructorName": "Michael Davis",
     "image": "https://i.ibb.co/wNbcYhx/1000-F-88976790-L8vt-PHmio-VZc-NNf-Ypa-Cc-Str-OVMZY5-Sp-G.jpg",
     "category": "Beginner",
     "instrument": "Piano",
+    "available_seats": 23,
     "details": "This course is designed for beginners who want to learn how to play the piano. No prior experience is required.",
     "duration": "3 months",
     "cost": "$300"
@@ -42,9 +50,11 @@
   {
     
     "name": "Intermediate winds",
+    "instructorName": "Jessica Lee",
     "image": "https://i.ibb.co/HhmWksd/large-c505fb8e-5f02-48a3-a695-21e18f4e362e.jpg",
     "category": "Intermediate",
     "instrument": "Winds",
+    "available_seats": 19,
     "details": "This course is designed for intermediate guitar players who want to enhance their skills and learn advanced techniques.",
     "duration": "4 months",
     "cost": "$400"
@@ -52,9 +62,11 @@
   {
     
     "name": "Advanced guitar",
+    "instructorName": "Sarah Thompson",
     "image": "https://i.ibb.co/PWfym6F/Photo-Programintrotoguitar-770x414.webp",
     "category": "Advanced",
     "instrument": "Guitar",
+    "available_seats": 24,
     "details": "This course is designed for advanced violinists who want to refine their skills and explore complex musical pieces.",
     "duration": "6 months",
     "cost": "$600"

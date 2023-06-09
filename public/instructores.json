@@ -1,6 +1,6 @@
 [
   {
-    "name": "John Smith",
+    "instructorName": "John Smith",
     "category": "Guitar Instructor",
     "image": "https://i.ibb.co/qxbTGV7/blog10.jpg",
     "email": "john.smith@example.com",
@@ -10,7 +10,7 @@
     "course_time": "Monday, Wednesday, Friday - 5:00 PM to 7:00 PM"
   },
   {
-    "name": "Emily Johnson",
+    "instructorName": "Emily Johnson",
     "category": "Piano Instructor",
     "image": "https://i.ibb.co/ZYb5dfX/music-teacher.jpg",
     "email": "emily.johnson@example.com",
@@ -20,7 +20,7 @@
     "course_time": "Tuesday, Thursday - 4:00 PM to 6:00 PM"
   },
   {
-    "name": "Michael Davis",
+    "instructorName": "Michael Davis",
     "category": "Drum Instructor",
     "image": "https://i.ibb.co/wwkpHZ5/tet-ti0303889.jpg",
     "email": "michael.davis@example.com",
@@ -30,7 +30,7 @@
     "course_time": "Monday, Wednesday, Friday - 6:00 PM to 8:00 PM"
   },
   {
-    "name": "Sarah Thompson",
+    "instructorName": "Sarah Thompson",
     "category": "Vocal Instructor",
     "image": "https://i.ibb.co/GVJd9pq/1000-F-81385839-5-X1-Uh-Ab-N3u20-JRf1qfehz-OLtz38-Bl8-Kg.jpg",
     "email": "sarah.thompson@example.com",
@@ -40,7 +40,7 @@
     "course_time": "Tuesday, Thursday - 6:00 PM to 8:00 PM"
   },
   {
-    "name": "Marry Wilson",
+    "instructorName": "Marry Wilson",
     "category": "Violin Instructor",
     "image": "https://i.ibb.co/Kh2DjnB/c870x524.webp",
     "email": "david.wilson@example.com",
@@ -50,7 +50,7 @@
     "course_time": "Monday, Wednesday, Friday - 3:00 PM to 5:00 PM"
   },
   {
-    "name": "Robert Garcia",
+    "instructorName": "Robert Garcia",
     "category": "Bass Guitar Instructor",
     "image": "https://i.ibb.co/jf4frMW/images-1.jpg",
     "email": "robert.garcia@example.com",
@@ -60,7 +60,7 @@
     "course_time": "Monday, Wednesday, Friday - 7:00 PM to 9:00 PM"
   },
   {
-    "name": "Jessica Lee",
+    "instructorName": "Jessica Lee",
     "category": "winds Instructor",
     "image": "https://i.ibb.co/ZfGsbhR/27984714-music-teacher.webp",
     "email": "jessica.lee@example.com",

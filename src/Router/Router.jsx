@@ -4,6 +4,10 @@ import Home from "../Pages/Home/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/LoginPage/Login";
 import SignUp from "../Pages/SignupPage/SignUp";
+import MyClasses from "../Pages/MyClasses/MyClasses";
+import PrivateRoute from "./Private/PrivateRoute";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import MyDashboard from "../Pages/Dashboard/MyDashboard";
 
 export const router = createBrowserRouter([
     {
@@ -24,9 +28,23 @@ export const router = createBrowserRouter([
             element:<SignUp/>
         },
         {
+          path:'/classes',
+          element: <PrivateRoute><MyClasses/></PrivateRoute>
+        },
+        {
             path:'*',
             element:<ErrorPage/>
         }
       ]
     },
+    {
+      path:'/dashboard',
+      element: <Dashboard/>,
+      children:[
+        {
+          path:'/dashboard',
+          element:<MyDashboard/>
+        }
+      ]
+    }
   ]);
