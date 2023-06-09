@@ -73,6 +73,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {
+          user && <div className="tooltip tooltip-open tooltip-left mr-1 font-mono" data-tip="hello">
+          {user?.displayName}
+        </div>
+        }
+        {
           user && <div className="w-10 mr-5 border-2 rounded-full border-[#efcf4f] hover:border-4">
           <img className="rounded-full" src={user?.photoURL} />
         </div>
