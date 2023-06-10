@@ -13,10 +13,17 @@ const TeachersCard = ({ instructor }) => {
     rating,
     review,
   } = instructor;
+
+  
+// TODO IMPLEMENT MODAL............
+  const handelModal = instructor =>{
+    console.log(instructor);
+  }
+
   return (
     <div className="card card-side bg-base-100 shadow-xl mt-10">
       <figure>
-        <img className="w-96 h-80" src={image} alt="Movie" />
+        <img className="w-72 h-60" src={image} alt="Movie" />
       </figure>
       <div className="card-body font-bold">
         <h2 className="card-title font-extrabold text-[#c25934]">{name}</h2>
@@ -26,7 +33,24 @@ const TeachersCard = ({ instructor }) => {
         <p>
           category Teacher: <span className="text-[#0c4b65]">{category}</span>
         </p>
-        <p>
+        
+        <Rating
+          placeholderRating={rating}
+          emptySymbol={<FaRegStar className="text-[#c25934]" />}
+          placeholderSymbol={<FaStar className="text-[#c25934]" />}
+          fullSymbol={<FaStar className="text-[#c25934]" />}
+        />
+        
+        <div className="card-actions justify-end">
+          <label onClick={() => handelModal(instructor)} htmlFor="my_modal_6" className="btn btn-sm font-bold text-white bg-[#c25934] hover:bg-[#0c4b65]">
+          see class
+          </label>
+
+          {/* Put this part before </body> tag */}
+          <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+          <div className="modal">
+            <div className="modal-box">
+            <p>
           Review: <span className="text-[#0c4b65]">{review}</span>
         </p>
         <p>
@@ -36,14 +60,13 @@ const TeachersCard = ({ instructor }) => {
         <p>
           Course_time: <span className="text-[#0c4b65]">{course_time}</span>
         </p>
-        <Rating
-          placeholderRating={rating}
-          emptySymbol={<FaRegStar className="text-[#c25934]"/>}
-          placeholderSymbol={<FaStar className="text-[#c25934]"/>}
-          fullSymbol={<FaStar className="text-[#c25934]"/>}
-        />
-        <div className="card-actions justify-end">
-          <button className="btn btn-sm font-bold text-white bg-[#c25934] hover:bg-[#0c4b65]">see class</button>
+              <div className="modal-action">
+                <label htmlFor="my_modal_6" className="btn">
+                  Close!
+                </label>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

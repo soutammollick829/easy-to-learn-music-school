@@ -9,6 +9,7 @@ import bannerImg2 from "../../../assets/imags/bannar cover img/1000_F_80069265_3
 import bannerImg3 from "../../../assets/imags/bannar cover img/1000_F_94702863_BS6eXcUhfCjDdlJP3VfXIX8qvNKUVquW.jpg";
 import bannerImg4 from "../../../assets/imags/bannar cover img/blog1-768x512.jpg";
 import bannerImg5 from "../../../assets/imags/bannar cover img/symphony-orchestra-performance-string-section_738298-1573.jpg";
+import { Bounce, Flip} from "react-awesome-reveal";
 
 const BannarCarusel = () => {
   return (
@@ -134,10 +135,14 @@ const BannarCarusel = () => {
         </SwiperSlide>
       </Swiper>
       <div className="bg-[#efcf4f] text-center h-80 mx-16 p-5 space-y-5 mt-20 rounded-lg">
+        <Flip>
         <h3 className="font-bold text-2xl text-[#c25934]">Opening Offer</h3>
+        </Flip>
+        <Bounce>
         <h1 className="uppercase font-extrabold text-7xl text-white">
           GET A FREE LESSON
         </h1>
+        </Bounce>
         <h3 className="font-bold text-2xl text-[#0c4b65]">
           Bring your children to a trial lesson to find out how much they enjoy
           doing music or singing

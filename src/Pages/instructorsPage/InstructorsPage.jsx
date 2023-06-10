@@ -9,7 +9,7 @@ const InstructorsPage = () => {
       <Helmet>
         <title>Easy to learn music school | instructors</title>
       </Helmet>
-      <div className="mx-10 space-y-10">
+      <div className="mx-10 space-y-10 grid lg:grid-cols-2 gap-10">
         {
            instructors?.map(instructor => <TeachersCard
            key={instructor._id}

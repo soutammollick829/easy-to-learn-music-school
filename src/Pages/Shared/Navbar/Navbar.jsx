@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/imags/website logo/beyoglu-sanat-animated.gif";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/Authprovider";
+import useSelectedClass from "../../../components/Hooks/useSelectedClass";
 
 const Navbar = () => {
   const {user, logOut} = useContext(AuthContext);
+  const [selectedClass] = useSelectedClass();
 
   const handelLogOut = () =>{
     logOut()
@@ -25,6 +27,7 @@ const Navbar = () => {
       { user && <li className="font-bold text-base hover:text-[#c25934]">
         <Link to='/dashboard'>Dashboard</Link>
       </li>}
+      
     </>
   );
   return (
@@ -72,11 +75,17 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
-        {
+      {
+        user && <div className="indicator mr-10">
+        <span className="indicator-item badge bg-[#efcf4f] font-extrabold">{selectedClass.length || 0}</span> 
+        <button className="btn btn-sm font-bold">my class</button>
+      </div>
+      }
+        {/* {
           user && <div className="tooltip tooltip-open tooltip-left mr-1 font-mono" data-tip="hello">
           {user?.displayName}
         </div>
-        }
+        } */}
         {
           user && <div className="w-10 mr-5 border-2 rounded-full border-[#efcf4f] hover:border-4">
           <img className="rounded-full" src={user?.photoURL} />

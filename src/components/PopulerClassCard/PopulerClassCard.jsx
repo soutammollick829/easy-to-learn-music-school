@@ -1,6 +1,5 @@
-
 import { FaCalendarAlt, FaMoneyBillAlt } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 
 const PopulerClassCard = ({ popular }) => {
   const { _id, name, image, details, instrument, duration, cost } = popular;
@@ -25,9 +24,11 @@ const PopulerClassCard = ({ popular }) => {
             </span>
           </div>
           <div className="card-actions justify-center mt-3">
-            <button className="btn btn-sm text-white bg-[#efcf4f] hover:bg-[#0c4b65]">
-              More info
-            </button>
+            <Link to='/classes'>
+              <button className="btn btn-sm text-white bg-[#efcf4f] hover:bg-[#0c4b65]">
+                More info
+              </button>
+            </Link>
           </div>
         </div>
       </div>
