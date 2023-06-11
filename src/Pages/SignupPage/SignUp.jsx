@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { FaEyeSlash, FaGoogle } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import loginImg from "../../assets/imags/Login/cloud-computing-modern-flat-concept-for-web-banner-design-man-enters-password-and-login-to-access-cloud-storage-for-uploading-and-processing-files-illustration-w.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/Authprovider";
@@ -15,8 +15,20 @@ const SignUp = () => {
     formState: { errors },
   } = useForm();
   const { createUser, updateUserProfile } = useContext(AuthContext);
+  const {googleSignIn} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
+  const from = location.state?.from?.pathname || '/';
+
+  const handelGoogleSignIn = () =>{
+    googleSignIn()
+    .then(result =>{
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      navigate(from , {replace: true})
+    })
+  }
 
   const onSubmit = (data) => {
     console.log(data);
@@ -25,19 +37,30 @@ const SignUp = () => {
       console.log(loggedUser);
       updateUserProfile(data.firstName, data.photo)
         .then(() => {
-          console.log("user profile update");
-          reset();
-          Swal.fire({
-            position: "top-center",
-            icon: "success",
-            title: "Sign up successful",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          navigate('/');
+          const saveUser = {name: data.firstName, email: data.email, photo: data.photo}
+          fetch(`http://localhost:5000/users`, {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(saveUser),
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.insertedId) {
+                reset();
+                Swal.fire({
+                  position: "top-center",
+                  icon: "success",
+                  title: "Sign up successful",
+                  showConfirmButton: false,
+                  timer: 1500,
+                });
+                navigate("/");
+              }
+            });
         })
         .catch((error) => console.log(error));
-      
     });
   };
 
@@ -183,7 +206,7 @@ const SignUp = () => {
             </form>
             <div className="divider">Login with google</div>
             <div className="mx-auto mb-5">
-              <FaGoogle className="text-3xl border-2 border-[#efcf4f] rounded-full hover:border-4" />
+              <button onClick={handelGoogleSignIn}><FaGoogle className="text-3xl border-2 border-[#efcf4f] rounded-full hover:border-4" /></button>
             </div>
           </div>
         </div>

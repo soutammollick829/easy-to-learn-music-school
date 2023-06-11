@@ -51,10 +51,16 @@ const MyDashboard = () => {
                   <td>#</td>
                   <th>Image</th>
                   <th>Name</th>
-                  <th>Student email</th>
-                  <th>delete</th>
-                  <th>1</th>
                   <th></th>
+                  <th></th>
+                  <th>Student email</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th>cost</th>
+                  <th></th>
+                  <th>delete</th>
                 </td>
               </thead>
               <tbody>

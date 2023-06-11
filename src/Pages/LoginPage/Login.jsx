@@ -7,30 +7,33 @@ import { AuthContext } from "../../providers/Authprovider";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const {singIn} = useContext(AuthContext);
+  const { register, handleSubmit } = useForm();
+  const { singIn, googleSignIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || "/";
+
+  const handelGoogleSignIn = () => {
+    googleSignIn().then((result) => {
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      navigate(from, { replace: true });
+    });
+  };
 
   const onSubmit = (data) => {
     console.log(data);
-    singIn(data.email, data.password)
-    .then(result => {
+    singIn(data.email, data.password).then((result) => {
       const loggedUser = result.user;
       console.log(loggedUser);
       Swal.fire(
-        'Login successful!',
-        'Welcome easy to learn music school',
-        'success'
-      )
-      navigate(from, {replace: true});
-    })
+        "Login successful!",
+        "Welcome easy to learn music school",
+        "success"
+      );
+      navigate(from, { replace: true });
+    });
   };
 
   return (
@@ -88,14 +91,16 @@ const Login = () => {
                 </Link>
               </h3>
               <div className="form-control mt-6">
-                <button className="btn bg-[#c25934] text-white font-bold hover:bg-bg-[#0c4b65]">
+                <button className="btn bg-[#c25934] hover:bg-[#0c4b65] text-white font-bold hover:bg-bg-[#0c4b65]">
                   Sign in
                 </button>
               </div>
             </form>
             <div className="divider">Login with google</div>
             <div className="mx-auto mb-5">
-                <FaGoogle className="text-3xl border-2 border-[#efcf4f] rounded-full hover:border-4"/>
+              <button onClick={handelGoogleSignIn}>
+                <FaGoogle className="text-3xl border-2 border-[#efcf4f] rounded-full hover:border-4" />
+              </button>
             </div>
           </div>
         </div>
