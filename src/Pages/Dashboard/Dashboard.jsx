@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FaBookReader, FaHome, FaUsers } from "react-icons/fa";
+import { FaBookReader, FaChessKing, FaHome, FaUserGraduate, FaUserTie, FaUsers } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../../providers/Authprovider";
 
@@ -28,19 +28,19 @@ const Dashboard = () => {
           </div>
           {/* Sidebar content here */}
           <li className="font-bold hover:text-[#c25934]">
-            <Link to="/">
-              <FaHome />
+            <Link to="/dashboard/students">
+              <FaUserGraduate />
               Students Dashboard
             </Link>
           </li>
           <li className="font-bold hover:text-[#c25934]">
             <Link to="/">
-              <FaHome /> Instructors Dashboard
+              <FaUserTie /> Instructors Dashboard
             </Link>
           </li>
           <li className="font-bold hover:text-[#c25934]">
             <Link to="/">
-              <FaHome /> Admin Dashboard
+              <FaChessKing /> Admin Dashboard
             </Link>
           </li>
 

@@ -18,6 +18,7 @@ const TeachersCard = ({ instructor }) => {
 // TODO IMPLEMENT MODAL............
   const handelModal = instructor =>{
     console.log(instructor);
+
   }
 
   return (

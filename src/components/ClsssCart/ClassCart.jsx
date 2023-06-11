@@ -16,16 +16,16 @@ const ClassCart = ({ item }) => {
     if(user){
       const selectedClass = {classId: _id,name, image , email: user?.email, cost}
       fetch(`http://localhost:5000/selected-class`, {
-        method: 'POST',
+        method:'POST',
         headers:{
-          'content-type': 'application/json'
+          'content-type':'application/json'
         },
         body: JSON.stringify(selectedClass)
       })
       .then(res => res.json())
       .then(data => {
         if(data.insertedId){
-          refetch();
+          refetch(); //call to data refetch 
           Swal.fire({
             position: 'top-end',
             icon: 'success',
