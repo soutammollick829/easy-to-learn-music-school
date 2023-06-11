@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { FaBookReader, FaChessKing, FaHome, FaUserGraduate, FaUserTie, FaUsers } from "react-icons/fa";
+import { FaBook, FaBookReader, FaChessKing, FaHome, FaUserGraduate, FaUserTie, FaUsers, FaWallet } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../../providers/Authprovider";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
+
+  const isAdmin = true;
+
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -27,7 +30,37 @@ const Dashboard = () => {
             <span className="text-2xl uppercase font-bold font-serif text-[#c25934]">{user?.displayName}</span>
           </div>
           {/* Sidebar content here */}
+          {
+            isAdmin ? <>
+            <li className="font-bold hover:text-[#c25934]">
+            <Link to="/dashboard">
+              <FaChessKing />
+              Admin Home
+            </Link>
+          </li>
+            <li className="font-bold hover:text-[#c25934]">
+            <Link to="/dashboard/students">
+              <FaBook />
+              Selected Class
+            </Link>
+          </li>
           <li className="font-bold hover:text-[#c25934]">
+            <Link to="/dashboard">
+              <FaWallet /> Payments History
+            </Link>
+          </li>
+          <li className="font-bold hover:text-[#c25934]">
+            <Link to="/dashboard">
+              <FaChessKing /> Manage Booking
+            </Link>
+          </li>
+          <li className="font-bold hover:text-[#c25934]">
+            <Link to="/dashboard/allStudents">
+              <FaUserGraduate /> All Students
+            </Link>
+          </li>
+            </> : <>
+            <li className="font-bold hover:text-[#c25934]">
             <Link to="/dashboard/students">
               <FaUserGraduate />
               Students Dashboard
@@ -43,6 +76,8 @@ const Dashboard = () => {
               <FaChessKing /> Admin Dashboard
             </Link>
           </li>
+            </>
+          }
 
           <div className="divider">OR</div>
 
