@@ -6,7 +6,7 @@ import StudentsTable from "./studentsTable/studentsTable";
 
 const MyDashboard = () => {
   const [selectedClass] = useSelectedClass();
-  const total = selectedClass.reduce(
+  const total = selectedClass?.reduce(
     (sum, item) => parseInt(item.cost) + sum,
     0
   );
@@ -48,16 +48,10 @@ const MyDashboard = () => {
               {/* head */}
               <thead>
                 <td>
-                  <td>#</td>
+                  <th>#</th>
                   <th>Image</th>
                   <th>Name</th>
-                  <th></th>
-                  <th></th>
                   <th>Student email</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
                   <th>cost</th>
                   <th></th>
                   <th>delete</th>
