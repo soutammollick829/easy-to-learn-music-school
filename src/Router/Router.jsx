@@ -10,6 +10,8 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import MyDashboard from "../Pages/Dashboard/MyDashboard";
 import InstructorsPage from "../Pages/instructorsPage/InstructorsPage";
 import AllStudents from "../Pages/Dashboard/AllStudentsPage/AllStudents";
+import InstructorsDashboard from "../Pages/instructorsDashboard/InstructorsDashboard";
+import AdminRoute from "./AdminRoute/AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -53,8 +55,12 @@ export const router = createBrowserRouter([
         },
         {
           path:'/dashboard/allStudents',
-          element: <AllStudents/>
-        }
+          element: <AdminRoute><AllStudents/></AdminRoute>
+        },
+        {
+          path:'/dashboard/instructors',
+          element:<InstructorsDashboard/>
+        },
       ]
     }
   ]);

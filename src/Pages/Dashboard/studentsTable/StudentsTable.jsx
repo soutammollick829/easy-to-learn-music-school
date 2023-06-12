@@ -22,7 +22,7 @@ const [, refetch] = useSelectedClass();
         fetch(`http://localhost:5000/selected-class/${row._id}`, {
           method: "DELETE",
         })
-          .then((res) => res.json())
+          .then(res => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
                 refetch();

@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { FaBook, FaBookReader, FaChessKing, FaHome, FaUserGraduate, FaUserTie, FaUsers, FaWallet } from "react-icons/fa";
 import { Link, Outlet } from "react-router-dom";
 import { AuthContext } from "../../providers/Authprovider";
+import useAdmin from "../../components/Hooks/useAdmin";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
 
-  const isAdmin = true;
+  const [isAdmin] = useAdmin();
+// const isAdmin = true;
 
   return (
     <div className="drawer lg:drawer-open">
@@ -56,7 +58,7 @@ const Dashboard = () => {
           </li>
           <li className="font-bold hover:text-[#c25934]">
             <Link to="/dashboard/allStudents">
-              <FaUserGraduate /> All Students
+              <FaUserGraduate /> Manage User
             </Link>
           </li>
             </> : <>
@@ -67,13 +69,14 @@ const Dashboard = () => {
             </Link>
           </li>
           <li className="font-bold hover:text-[#c25934]">
-            <Link to="/">
+            <Link to="/dashboard/instructors">
               <FaUserTie /> Instructors Dashboard
             </Link>
           </li>
           <li className="font-bold hover:text-[#c25934]">
-            <Link to="/">
-              <FaChessKing /> Admin Dashboard
+            <Link to="/dashboard/students">
+              <FaBook />
+              Selected Class
             </Link>
           </li>
             </>

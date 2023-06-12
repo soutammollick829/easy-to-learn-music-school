@@ -3,13 +3,11 @@ import useSelectedClass from "../../components/Hooks/useSelectedClass";
 import Marquee from "react-fast-marquee";
 import StudentsTable from "./studentsTable/studentsTable";
 
-
 const MyDashboard = () => {
   const [selectedClass] = useSelectedClass();
   const total = selectedClass?.reduce(
-    (sum, item) => parseInt(item.cost) + sum,
-    0
-  );
+    (sum, item) => parseFloat(item.cost) + sum, 0);
+ 
 
   return (
     <div>
@@ -26,7 +24,7 @@ const MyDashboard = () => {
           <div className="stat">
             <div className="stat-title font-bold">Total selected class:</div>
             <div className="stat-value text-center text-[#0c4b65]">
-              {selectedClass.length}
+              {selectedClass?.length}
             </div>
             <div className="stat-desc">21% more than last month</div>
           </div>
@@ -38,8 +36,12 @@ const MyDashboard = () => {
           </div>
 
           <div className="stat">
-            <button className="btn btn-sm bg-[#efcf4f] text-[#0c4b65]">pay & join</button>
-            <button className="btn btn-sm w-36 bg-[#0c4b65] text-white hover:text-[#0c4b65]">enrolled class</button>
+            <button className="btn btn-sm bg-[#efcf4f] text-[#0c4b65]">
+              pay & join
+            </button>
+            <button className="btn btn-sm w-36 bg-[#0c4b65] text-white hover:text-[#0c4b65]">
+              enrolled class
+            </button>
           </div>
         </div>
         <div>
@@ -47,7 +49,7 @@ const MyDashboard = () => {
             <table className="table">
               {/* head */}
               <thead>
-                <td>
+                <tr>
                   <th>#</th>
                   <th>Image</th>
                   <th>Name</th>
@@ -55,17 +57,16 @@ const MyDashboard = () => {
                   <th>cost</th>
                   <th></th>
                   <th>delete</th>
-                </td>
+                </tr>
               </thead>
               <tbody>
-                {
-                    selectedClass?.map((row , index) => <StudentsTable
+                {selectedClass?.map((row, index) => (
+                  <StudentsTable
                     key={row._id}
                     row={row}
                     index={index}
-                    ></StudentsTable>)
-                }
-                
+                  ></StudentsTable>
+                ))}
               </tbody>
             </table>
           </div>
