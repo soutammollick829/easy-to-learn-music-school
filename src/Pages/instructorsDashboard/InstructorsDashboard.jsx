@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
+import useAxiosSecure from "../../components/Hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 const image_hosting_token = import.meta.env.VITE_iamge_hosting_api;
 
 const InstructorsDashboard = () => {
-
+const [axiosSecure] = useAxiosSecure();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`
   const onSubmit = data => {
@@ -20,9 +22,22 @@ console.log(data);
         console.log(imgResponse);
         if(imgResponse.success){
             const imgUrl = imgResponse.data.display_url;
-            const {details,instructorEmail,instructorName,name,price,seats} = data;
-           const addNewClass = {details,image:imgUrl,instructorEmail,instructorName,name,price: parseFloat(price),seats};
+            const {details,instructorEmail,instructorName,name,cost,available_seats} = data;
+           const addNewClass = {details,image:imgUrl,instructorEmail,instructorName,name,cost: parseFloat(cost),available_seats};
            console.log(addNewClass);
+           axiosSecure.post('/populer-class',addNewClass)
+           .then(data => {
+            console.log('posting a new item', data.data)
+            if(data.data.insertedId){
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Added a new class',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
+           })
         }
     })
   };
@@ -85,7 +100,7 @@ console.log(data);
           </label>
           <input
             type="number"
-            {...register("seats")}
+            {...register("available_seats")}
             placeholder="Available seats"
             className="input border-warning"
           />
@@ -96,7 +111,7 @@ console.log(data);
           </label>
           <input
             type="text"
-            {...register("price")}
+            {...register("cost")}
             placeholder="Price"
             className="input border-warning"
           />
