@@ -63,7 +63,7 @@ const Dashboard = () => {
           </li>
             </> : <>
             <li className="font-bold hover:text-[#c25934]">
-            <Link to="/dashboard/students">
+            <Link to="/dashboard">
               <FaUserGraduate />
               Students Dashboard
             </Link>

@@ -2,11 +2,12 @@ import { Helmet } from "react-helmet";
 import useSelectedClass from "../../components/Hooks/useSelectedClass";
 import Marquee from "react-fast-marquee";
 import StudentsTable from "./studentsTable/studentsTable";
+import { Link } from "react-router-dom";
 
 const MyDashboard = () => {
   const [selectedClass] = useSelectedClass();
   const total = selectedClass?.reduce(
-    (sum, item) => parseFloat(item.cost) + sum, 0);
+    (sum, item) => item.cost + sum, 0);
  
 
   return (
@@ -36,12 +37,12 @@ const MyDashboard = () => {
           </div>
 
           <div className="stat">
-            <button className="btn btn-sm bg-[#efcf4f] text-[#0c4b65]">
+            <Link to='/dashboard/payment'><button className="btn btn-sm w-36 bg-[#efcf4f] text-[#0c4b65]">
               pay & join
-            </button>
-            <button className="btn btn-sm w-36 bg-[#0c4b65] text-white hover:text-[#0c4b65]">
+            </button></Link>
+            <Link><button className="btn btn-sm w-36 bg-[#0c4b65] text-white hover:text-[#0c4b65]">
               enrolled class
-            </button>
+            </button></Link>
           </div>
         </div>
         <div>

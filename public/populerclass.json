@@ -9,7 +9,7 @@
     "available_seats": 32,
     "details": "This course is designed for beginners who want to learn how to play the piano. No prior experience is required.",
     "duration": "3 months",
-    "cost": "$350"
+    "cost": 350
   },
   {
     
@@ -21,7 +21,7 @@
     "available_seats": 25,
     "details": "This course is designed for intermediate guitar players who want to enhance their skills and learn advanced techniques.",
     "duration": "4 months",
-    "cost": "$400"
+    "cost": 400
   },
   {
     
@@ -33,7 +33,7 @@
     "available_seats": 11,
     "details": "This course is designed for advanced violinists who want to refine their skills and explore complex musical pieces.",
     "duration": "6 months",
-    "cost": "$600"
+    "cost": 600
   },
   {
     
@@ -45,7 +45,7 @@
     "available_seats": 23,
     "details": "This course is designed for beginners who want to learn how to play the piano. No prior experience is required.",
     "duration": "3 months",
-    "cost": "$300"
+    "cost": 350
   },
   {
     
@@ -57,7 +57,7 @@
     "available_seats": 19,
     "details": "This course is designed for intermediate guitar players who want to enhance their skills and learn advanced techniques.",
     "duration": "4 months",
-    "cost": "$400"
+    "cost": 400
   },
   {
     
@@ -69,6 +69,6 @@
     "available_seats": 24,
     "details": "This course is designed for advanced violinists who want to refine their skills and explore complex musical pieces.",
     "duration": "6 months",
-    "cost": "$600"
+    "cost": 600
   }
 ]

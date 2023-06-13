@@ -13,6 +13,7 @@ import AllStudents from "../Pages/Dashboard/AllStudentsPage/AllStudents";
 import InstructorsDashboard from "../Pages/instructorsDashboard/InstructorsDashboard";
 import AdminRoute from "./AdminRoute/AdminRoute";
 import ManageClass from "../Pages/Dashboard/manageClass/ManageClass";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -49,6 +50,7 @@ export const router = createBrowserRouter([
     {
       path:'/dashboard',
       element: <Dashboard/>,
+      errorElement:<ErrorPage/>,
       children:[
         {
           path:'/dashboard/students',
@@ -60,12 +62,20 @@ export const router = createBrowserRouter([
         },
         {
           path:'/dashboard/instructors',
-          element:<InstructorsDashboard/>
+          element:<AdminRoute><InstructorsDashboard/></AdminRoute>
         },
         {
           path:'/dashboard/manage-class',
-          element:<ManageClass/>
-        }
+          element:<AdminRoute><ManageClass/></AdminRoute>
+        },
+        {
+          path:'/dashboard/payment',
+          element:<Payment/>
+        },
+        {
+          path:'*',
+          element:<ErrorPage/>
+      }
       ]
     }
   ]);

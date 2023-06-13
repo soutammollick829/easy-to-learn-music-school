@@ -33,7 +33,7 @@ const [, refetch] = useSelectedClass();
     });
   };
   return (
-    <div className=" shadow-2xl">
+
       <tr>
         <td>{index + 1}</td>
         <td>
@@ -59,7 +59,7 @@ const [, refetch] = useSelectedClass();
           </button>
         </th>
       </tr>
-    </div>
+
   );
 };
 
