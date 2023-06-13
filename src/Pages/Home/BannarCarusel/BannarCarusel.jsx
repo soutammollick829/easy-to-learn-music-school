@@ -134,16 +134,16 @@ const BannarCarusel = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="bg-[#efcf4f] text-center h-80 mx-16 p-5 space-y-5 mt-20 rounded-lg">
+      <div className="bg-[#efcf4f] text-center h-80 mx-8 lg:mx-16 p-5 space-y-5 mt-20 rounded-lg">
         <Flip>
         <h3 className="font-bold text-2xl text-[#c25934]">Opening Offer</h3>
         </Flip>
         <Bounce>
-        <h1 className="uppercase font-extrabold text-7xl text-white">
+        <h1 className="uppercase font-extrabold text-4xl lg:text-7xl text-white">
           GET A FREE LESSON
         </h1>
         </Bounce>
-        <h3 className="font-bold text-2xl text-[#0c4b65]">
+        <h3 className="font-bold lg:text-2xl text-[#0c4b65]">
           Bring your children to a trial lesson to find out how much they enjoy
           doing music or singing
         </h3>

@@ -15,7 +15,7 @@ const ClassCart = ({ item }) => {
   const handelSelectedClass = item =>{
     if(user){
       const selectedClass = {classId: _id,name, image , email: user?.email, cost}
-      fetch(`http://localhost:5000/selected-class`, {
+      fetch(`https://easy-to-learn-music-school-server.vercel.app/selected-class`, {
         method:'POST',
         headers:{
           'content-type':'application/json'

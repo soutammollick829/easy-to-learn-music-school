@@ -4,12 +4,12 @@ import Swal from "sweetalert2";
 
 const AllStudents = () => {
   const { data: users = [], refetch } = useQuery(["users"], async () => {
-    const res = await fetch(`http://localhost:5000/users`);
+    const res = await fetch(`https://easy-to-learn-music-school-server.vercel.app/users`);
     return res.json();
   });
 
   const handelMakeAdmin = user =>{
-    fetch(`http://localhost:5000/users/admin/${user?._id}`, {
+    fetch(`https://easy-to-learn-music-school-server.vercel.app/users/admin/${user?._id}`, {
         method:'PATCH',
     })
     .then(res => res.json())
@@ -39,7 +39,7 @@ const AllStudents = () => {
         confirmButtonText: "Yes, delete it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          fetch(`http://localhost:5000/users/admin/${user?._id}`, {
+          fetch(`https://easy-to-learn-music-school-server.vercel.app/users/admin/${user?._id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

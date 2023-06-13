@@ -19,7 +19,7 @@ const [, refetch] = useSelectedClass();
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/selected-class/${row._id}`, {
+        fetch(`https://easy-to-learn-music-school-server.vercel.app/selected-class/${row._id}`, {
           method: "DELETE",
         })
           .then(res => res.json())

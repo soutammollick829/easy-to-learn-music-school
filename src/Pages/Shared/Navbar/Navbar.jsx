@@ -27,11 +27,17 @@ const Navbar = () => {
       { user && <li className="font-bold text-base hover:text-[#c25934]">
         <Link to='/dashboard'>Dashboard</Link>
       </li>}
+      {
+        user && <div className="indicator mr-10">
+        <span className="indicator-item badge bg-[#efcf4f] font-extrabold">{selectedClass.length || 0}</span> 
+        <button className="btn btn-sm font-bold">my class</button>
+      </div>
+      }
       
     </>
   );
   return (
-    <div className="navbar">
+    <div className="navbar lg:w-[600px]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -58,12 +64,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex items-center">
-          <img className="w-24 lg:w-28" src={logo} alt="" />
-          <p>
+          <img className="w-14 lg:w-28" src={logo} alt="" />
+          <p className="w-80 lg:w-80">
             <span className=" text-2xl lg:text-3xl font-extrabold text-[#efcf4f]">
               Easy to
-            </span>{" "}
-            <span className="text-2xl lg:text-3xl font-bold text-[#c25934]">
+            </span>
+            <span className="text-xl lg:text-3xl font-bold text-[#c25934]">
               learn
             </span>
             <br />
@@ -75,19 +81,14 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{navOptions}</ul>
       </div>
       <div className="navbar-end">
-      {
-        user && <div className="indicator mr-10">
-        <span className="indicator-item badge bg-[#efcf4f] font-extrabold">{selectedClass.length || 0}</span> 
-        <button className="btn btn-sm font-bold">my class</button>
-      </div>
-      }
+      
         {/* {
           user && <div className="tooltip tooltip-open tooltip-left mr-1 font-mono" data-tip="hello">
           {user?.displayName}
         </div>
         } */}
         {
-          user && <div className="w-10 mr-5 border-2 rounded-full border-[#efcf4f] hover:border-4">
+          user && <div className="w-7 lg:w-16 lg:mr-5 border-2 rounded-full border-[#efcf4f] hover:border-4">
           <img className="rounded-full" src={user?.photoURL} />
         </div>
         }

@@ -43,7 +43,7 @@ console.log(data);
   };
   return (
     <>
-      <h1>Add a new class</h1>
+      <h1 className="text-4xl font-bold text-[#0c4b65] mt-10">Add a new class</h1>
     <form onSubmit={handleSubmit(onSubmit)} className="w-96">
       <div className="form-control p-2">
         <label className="label">
@@ -117,10 +117,10 @@ console.log(data);
           />
         </div>
       </div>
-    <div className="mt-5 px-">
+    <div className="mt-5 px-2">
       <textarea {...register("details")} className="textarea textarea-warning w-[370px]" placeholder="Class details"></textarea>
       </div>
-      <button className="btn">add class</button>
+      <button className="btn mt-5 ml-32 mb-20">add class</button>
     </form>
     </>
   );

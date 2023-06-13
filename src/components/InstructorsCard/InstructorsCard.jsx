@@ -5,7 +5,7 @@ const InstructorsCard = ({instructor}) => {
     const {_id, name, image, category} = instructor;
   return (
     <div className="mt-16">
-       <div className="w-56 bg-base-100 shadow-2xl">
+       <div className="w-full lg:w-56 bg-base-100 shadow-2xl">
   <figure className="px-10 pt-10">
     <img src={image} alt="Shoes" className="rounded-full h-32 border-4 border-[#efcf4f] hover:border-8" />
   </figure>
