@@ -12,6 +12,7 @@ import InstructorsPage from "../Pages/instructorsPage/InstructorsPage";
 import AllStudents from "../Pages/Dashboard/AllStudentsPage/AllStudents";
 import InstructorsDashboard from "../Pages/instructorsDashboard/InstructorsDashboard";
 import AdminRoute from "./AdminRoute/AdminRoute";
+import ManageClass from "../Pages/Dashboard/manageClass/ManageClass";
 
 export const router = createBrowserRouter([
     {
@@ -61,6 +62,10 @@ export const router = createBrowserRouter([
           path:'/dashboard/instructors',
           element:<InstructorsDashboard/>
         },
+        {
+          path:'/dashboard/manage-class',
+          element:<ManageClass/>
+        }
       ]
     }
   ]);

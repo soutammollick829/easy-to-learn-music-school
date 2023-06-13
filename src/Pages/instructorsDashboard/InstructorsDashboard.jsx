@@ -6,7 +6,7 @@ const image_hosting_token = import.meta.env.VITE_iamge_hosting_api;
 
 const InstructorsDashboard = () => {
 const [axiosSecure] = useAxiosSecure();
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const { register, handleSubmit, } = useForm();
   const image_hosting_url = `https://api.imgbb.com/1/upload?key=${image_hosting_token}`
   const onSubmit = data => {
 console.log(data);

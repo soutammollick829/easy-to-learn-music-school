@@ -52,7 +52,7 @@ const Dashboard = () => {
             </Link>
           </li>
           <li className="font-bold hover:text-[#c25934]">
-            <Link to="/dashboard">
+            <Link to="/dashboard/manage-class">
               <FaChessKing /> Manage Booking
             </Link>
           </li>
